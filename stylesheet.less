@@ -233,6 +233,9 @@
                         border-top-color: fade(@color-swatch1, 75%);
                         right: 20px;
                         top: 50%;
+                        @media screen and (max-width: 920px) {
+                            border-top-color: @color-swatch2;
+                        }
                     }
                     span.text {
                         color: @color-swatch1;

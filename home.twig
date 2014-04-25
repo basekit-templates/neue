@@ -1,0 +1,79 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="ecom-nav">
+    <div class="container">
+        <div class="grid">
+            <nav class="col-60 desktop-nav">
+                {{widget('extendednavigation', 'desktopnav', {})|raw}}
+            </nav><!--end col-60-->
+            <div class="col-30">
+                {{widget('ecombasket', 'ecombasket', {})|raw}}
+            </div><!--end col-30-->
+        </div><!--end grid-->
+    </div><!--end container-->
+</div><!--end ecom-nav-->
+
+<div class="offset">
+
+    <header class="bk-header">
+        <div class="container">
+            <div class="grid">
+                <div class="col-60">
+                    {{widget('companyname', 'companyname', {"business": "NEUE"})|raw}}
+                </div><!--end col-30-->
+                <div class="col-30 mobile-nav">
+                    {{widget('extendednavigation', 'mobilenav', {})|raw}}
+                </div><!--end col-30-->
+                <div class="col-30">
+                    {{widget('clicktocall', 'thisunqiuewidgetname', {phoneText: 'Click to Call'})|raw}}
+                </div><!--end col-30-->
+            </div><!--end grid-->
+        </div><!--end container-->
+    </header>
+
+    <div class="container feature">
+        <div class="grid">
+            <div class="col-100">
+                {{widget('responsiveslideshow', 'slideshow', {'duration':'3', 'transSpeed': '1000', 'transType': 'fade', 'showButtons': true, 'showBullets': false, 'allowPause': true, 'allowLoop': true, 'images':[{'imageHeight':'500', 'imageWidth':'300', 'url':'https://s3.amazonaws.com/ooomf-com-files/TIDqBLgQw6IUt5ZHKS0f_11891558035_eafdf53bf0_o.jpg', 'title':'', 'description': ''},{'imageHeight':'500', 'imageWidth':'300', 'url':'https://s3.amazonaws.com/ooomf-com-files/iqlYdAAYQiaOCoKnT6jE_kabia.jpg' }]})|raw}}
+            </div><!--end col-100-->
+        </div><!--end grid-->
+    </div><!--end container-->
+
+    <div role="main">
+        <div class="container">
+            <div class="grid">
+                <div class="col-100">
+                    {{widget('ecomproductslist', 'ecomproductslist', {})|raw}}
+                </div><!--end 100-->
+            </div><!--end grid-->
+        </div><!--end container-->
+    </div><!--end main-->
+
+    <footer class="bk-footer">
+        <div class="container">
+            <div class="grid">
+                <div class="col-30">
+                    {{widget('companyname', 'companyname', {"business": "NEUE"})|raw}}
+                </div><!--end col-30-->
+                <div class="col-30">
+                    {{widget('companyaddress', 'address', {})|raw}}
+                </div><!--end col-30-->
+                <div class="col-30">
+                    {{widget('signupform', 'signup-footer', {'text': 'Send', 'label': 'Your Email', 'formTitle': '', 'email': 'profile'})|raw}}
+                </div><!--end col-30-->
+            </div><!--end grid-->
+            <div class="grid copyright">
+                <div class="col-50">
+                    {{widget('content', 'copyright', {content: '© Lorum ipsum dolor', lines: 'all'})|raw}}
+                </div><!--end col-50-->
+                <div class="col-50">   
+                    {{widget('socialicons', 'social', {'googleplus': 'https://plus.google.com/101946323226233111530', 'linkedin':'http://www.linkedin.com/company/basekit', 'facebook': 'https://www.facebook.com/TeamBaseKit', 'twitter': 'https://twitter.com/basekit', 'youtube': 'https://www.youtube.com/user/TeamBaseKit', 'rss': 'http://blogdiseno.basekit.es/feed/'})|raw}}
+                </div><!--end col-50-->
+            </div><!--end grid-->
+    </footer>
+
+</div<!-end offset-->
+
+{% endblock %}

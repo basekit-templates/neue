@@ -4,12 +4,6 @@
 @tablet: ~"only screen and (max-width: 860px)";
 @mobile: ~"only screen and (max-width: 650px)";
 
-/* Common */
-
-body {
-  background-color: @color-swatch1;
-}
-
 /* Grid */
 
 .container {
@@ -44,12 +38,19 @@ body {
     .grid {
         margin-left: 0;
         max-width: none;
+        overflow: visible;
         [class*="col-"] {
             width: 100%;
             margin-left: 0;
             display: block;
         }
     }
+}
+
+// Global
+
+&:hover {
+    transition: background-color 0.5s ease;
 }
 
 /* Header */
@@ -117,7 +118,7 @@ body {
             [class*="col-"] {
                 width: 100%;
                 margin-left: 0;
-                display: block;
+                display: inline-block;
                 clear: both;
             }
             .col-60 {
@@ -130,7 +131,7 @@ body {
         a {
             border-bottom: 4px solid @font-swatch10-color;
             @media @tablet {
-                font-size: bkscale(@font-swatch10-font-size, 1.1);
+                font-size: bkscale(@font-swatch10-font-size, .8);
             }
         }
     }
@@ -139,26 +140,21 @@ body {
         display: block;
         font-weight: 600;
         margin-top: 10px;
-        padding: 12px 10px 12px 38px;
+        padding: 10px 0;
         height: 55px;
         width: 65%;
         text-align: center;
         float: right;
         &:hover {
-            padding: 12px 10px 12px 38px;
+            background-color: @color-swatch2;
+            color: @color-swatch1;
+            border-color: @color-swatch2;
         }
         @media only screen and (max-width: 920px) {
-            background-position: 32%;
             display: block;
             float: none;
-            padding: 16px 35px 12px 38px;
-            margin-top: 35px;
-            text-align: center;
             width: 100%;
-            &:hover {
-                background-position: 32%;
-                padding: 16px 35px 12px 38px;
-            }
+            background-image: none;
         }
     }
 }
@@ -197,6 +193,9 @@ body {
                 &:hover {
                     background-color: fade(@color-swatch6, 20%);
                     transition: background-color 0.5s ease;
+                    ul {
+                        margin: 14px 0 0;
+                    }
                 }
                 @media screen and (max-width: 920px) {
                     border-bottom: 1px solid @color-swatch7;
@@ -208,6 +207,11 @@ body {
                     @media screen and (max-width: 920px) {
                         color: @color-swatch5;
                     }
+                    @media screen and (max-width: 920px) {
+                        &:hover {
+                            color: lighten(@color-swatch5,30%);
+                        }
+                    }
                 }
                 &:last-child {
                     border-right: 1px solid fade(@color-swatch1, 20%);
@@ -217,6 +221,9 @@ body {
                 a, span.text {
                     @media @tablet {
                         padding-left: 0;
+                    }
+                    @media screen and (max-width: 920px) {
+                        padding: 0;
                     }
                 }
                 &.folder {
@@ -232,11 +239,21 @@ body {
                         @media screen and (max-width: 920px) {
                             color: @color-swatch5;
                         }
+                        &:hover {
+                            @media screen and (max-width: 920px) {
+                                color: lighten(@color-swatch5,30%);
+                            }
+                        }
                     }
                     ul {
-                        background-color: fade(@color-swatch2, 80%);
+                        background-color: @color-swatch2;
                         left: 0;
-                        top: 55px;
+                        @media screen and (max-width: 920px) {
+                            li {
+                                border-bottom: 1px solid darken(@color-swatch7,5%);
+                            }
+                            background-color: @color-swatch7;
+                        }
                     }
                     li {
                         border-bottom: 1px solid fade(@color-swatch1, 15%);
@@ -324,9 +341,6 @@ body {
             p, .basket-count {
                 color: @color-swatch1;
             }
-            p:before {
-                background-image: image('/images/basketicon-hover.png');
-            }
         }
         p, .basket-count {
             color: @color-swatch1;
@@ -337,7 +351,7 @@ body {
         }
         p:before {
             content: "";
-            background-image: image('/images/basketicon.png');
+            background-image: image('/images/basketicon-hover.png');
             background-repeat: no-repeat;
             display: inline-block;
             height: 16px;
@@ -362,7 +376,7 @@ body {
         border-radius: 0 0 5px 5px;
         border: 0;
         padding: 0 10px 15px;
-        max-height: 300px;
+        max-height: 320px;
         overflow-y: scroll;
         position: absolute;
         right: 0;
@@ -461,22 +475,8 @@ body {
         .ecombasket-checkout-wrap {
             margin: 1em 0;
             .ecombasket-checkout-link {
-                padding: 10px;
-                font-family: @font-swatch7-font-family;
-                color: @font-swatch7-color;
-                font-size: @font-swatch7-font-size;
-                font-weight: @font-swatch7-font-weight;
-                line-height: @font-swatch7-line-height;
-                background-color: @color-swatch3;
-                border: none;
                 display: block;
                 text-align: center;
-                @media @tablet {
-                    display: inline-block;
-                }
-                @media @mobile {
-                    display: block;
-                }
             }
 
         }
@@ -912,10 +912,12 @@ div[role="main"] {
             }
         }
     }
-    .copyright {
-        margin-top: 60px;
-        .bk-content-text {
-            line-height: 80px;
+    .widget {
+        &.profile {
+            margin-top: 70px;
+            p, span {
+                color: @color-swatch1;
+            }
         }
     }
 }
@@ -929,6 +931,7 @@ div[role="main"] {
 }
 
 .widget.responsiveslideshow .slideshow-widget {
+    background-color: lighten(@color-swatch7,1%);
     .btn-prev, .btn-next {
         text-indent: 1000px;
         overflow: hidden;

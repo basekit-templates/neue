@@ -21,13 +21,10 @@
         <div class="container">
             <div class="grid">
                 <div class="col-60">
-                    {{widget('companyname', 'companyname', {"business": "NEUE"})|raw}}
+                    {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
                 </div><!--end col-30-->
-                <div class="col-30 mobile-nav">
+                <div class="col-100 mobile-nav">
                     {{widget('extendednavigation', 'mobilenav', {})|raw}}
-                </div><!--end col-30-->
-                <div class="col-30">
-                    {{widget('clicktocall', 'thisunqiuewidgetname', {phoneText: 'Click to Call'})|raw}}
                 </div><!--end col-30-->
             </div><!--end grid-->
         </div><!--end container-->
@@ -51,29 +48,8 @@
         </div><!--end container-->
     </div><!--end main-->
 
-    <footer class="bk-footer">
-        <div class="container">
-            <div class="grid">
-                <div class="col-30">
-                    {{widget('companyname', 'companyname', {"business": "NEUE"})|raw}}
-                </div><!--end col-30-->
-                <div class="col-30">
-                    {{widget('companyaddress', 'address', {})|raw}}
-                </div><!--end col-30-->
-                <div class="col-30">
-                    {{widget('signupform', 'signup-footer', {'text': 'Send', 'label': 'Your Email', 'formTitle': '', 'email': 'profile'})|raw}}
-                </div><!--end col-30-->
-            </div><!--end grid-->
-            <div class="grid copyright">
-                <div class="col-50">
-                    {{widget('content', 'copyright', {content: '© Lorum ipsum dolor', lines: 'all'})|raw}}
-                </div><!--end col-50-->
-                <div class="col-50">   
-                    {{widget('socialicons', 'social', {'googleplus': 'https://plus.google.com/101946323226233111530', 'linkedin':'http://www.linkedin.com/company/basekit', 'facebook': 'https://www.facebook.com/TeamBaseKit', 'twitter': 'https://twitter.com/basekit', 'youtube': 'https://www.youtube.com/user/TeamBaseKit', 'rss': 'http://blogdiseno.basekit.es/feed/'})|raw}}
-                </div><!--end col-50-->
-            </div><!--end grid-->
-    </footer>
+    {% include 'includes/footer.twig' %}
 
-</div<!-end offset-->
+</div>
 
 {% endblock %}

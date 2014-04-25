@@ -1,0 +1,18 @@
+<footer class="bk-footer">
+    <div class="container">
+        <div class="grid">
+            <div class="col-30">
+                {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+            </div><!--end col-30-->
+            <div class="col-30">
+                {{widget('companyaddress', 'address', {})|raw}}
+            </div><!--end col-30-->
+            <div class="col-30">
+                {{widget('signupform', 'signup-footer', {'text': 'Send', 'label': 'Your Email', 'formTitle': '', 'email': 'profile'})|raw}}
+            </div><!--end col-30-->
+            <div class="col-100">
+                {{widget('profile', 'footercolumn2profilecopyright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+            </div><!--end grid-->
+        </div><!--end grid-->
+    </div>
+</footer>

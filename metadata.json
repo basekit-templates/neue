@@ -1,8 +1,8 @@
 {
-    "name":"Frames Fashion",
-    "thumbnail":"frames.png",
-    "screenshot":"frames.png",
-    "pageTypes": ["home", "default", "ecomproductlist", "ecomproduct", "ecomcheckout"],
+    "name":"Neue",
+    "thumbnail":"neue.png",
+    "screenshot":"neue.png",
+    "pageTypes": ["home", "default"],
     "tags": {
     "en": ["clean", "menu", "ecommerce", "shop"],
     "es": ["limpio", "menú", "ecommerce", "tienda"],

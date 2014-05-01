@@ -5,43 +5,40 @@
 <div class="ecom-nav">
     <div class="container">
         <div class="grid">
-            <nav class="col-60 desktop-nav">
+            <nav class="col-100 desktop-nav">
                 {{widget('extendednavigation', 'desktopnav', {})|raw}}
-            </nav><!--end col-60-->
-            <div class="col-30">
+            </nav><!--end col-100-->
+            <!--<div class="col-30">
                 {{widget('ecombasket', 'ecombasket', {})|raw}}
-            </div><!--end col-30-->
+            </div>-->
         </div><!--end grid-->
     </div><!--end container-->
 </div><!--end ecom-nav-->
 
-<div class="offset">
+<header class="bk-header">
+    <div class="container">
+        <div class="grid">
+            <div class="col-100">
+                {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+                {{widget('ecombasket', 'ecombasket', {})|raw}}
+            </div><!--end col-100-->
+            <!--<div class="col-100 mobile-nav">
+                {{widget('extendednavigation', 'mobilenav', {})|raw}}
+            </div>-->
+        </div><!--end grid-->
+    </div><!--end container-->
+</header>
 
-    <header class="bk-header">
-        <div class="container">
-            <div class="grid">
-                <div class="col-60">
-                    {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-                </div><!--end col-30-->
-                <div class="col-100 mobile-nav">
-                    {{widget('extendednavigation', 'mobilenav', {})|raw}}
-                </div><!--end col-30-->
-            </div><!--end grid-->
-        </div><!--end container-->
-    </header>
+<div role="main">
+    <div class="container">
+        <div class="grid">
+            <div class="col-100">
+                {{zone('main')|raw}}
+            </div><!--end 100-->
+        </div><!--end grid-->
+    </div><!--end container-->
+</div><!--end main-->
 
-   <div role="main">
-        <div class="container">
-            <div class="grid">
-                <div class="col-100">
-                    {{zone('main')|raw}}
-                </div><!--end 100-->
-            </div><!--end grid-->
-        </div><!--end container-->
-    </div><!--end main-->
-
-    {% include 'includes/footer.twig' %}
-
-</div>
+{% include 'includes/footer.twig' %}
 
 {% endblock %}

@@ -2,32 +2,7 @@
 
 {% block content %}
 
-<div class="ecom-nav">
-    <div class="container">
-        <div class="grid">
-            <nav class="col-100 desktop-nav">
-                {{widget('extendednavigation', 'desktopnav', {})|raw}}
-            </nav><!--end col-100-->
-            <!--<div class="col-30">
-                {{widget('ecombasket', 'ecombasket', {})|raw}}
-            </div>-->
-        </div><!--end grid-->
-    </div><!--end container-->
-</div><!--end ecom-nav-->
-
-<header class="bk-header">
-    <div class="container">
-        <div class="grid">
-            <div class="col-100">
-                {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-                {{widget('ecombasket', 'ecombasket', {})|raw}}
-            </div><!--end col-100-->
-            <!--<div class="col-100 mobile-nav">
-                {{widget('extendednavigation', 'mobilenav', {})|raw}}
-            </div>-->
-        </div><!--end grid-->
-    </div><!--end container-->
-</header>
+{% include 'includes/header.twig' %}
 
 <div role="main">
     <div class="container">

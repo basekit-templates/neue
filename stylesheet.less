@@ -74,6 +74,18 @@
     transition: background-color 0.5s ease;
 }
 
+body.edit { /* border for logo on editor */
+    .widget {
+        &.logo {
+            img {
+                border: 1px dashed red;
+                margin: 0 0 2px;
+                width: 10px;
+            }
+        }
+    }
+}
+
 /* Header */
 
 .ecom-nav {
@@ -331,7 +343,7 @@
     .ecombasket-list-container {
         display: none;
         background-color: @color-swatch1;
-        border: 2px solid lighten(@color-swatch4, 60%);
+        border: 2px solid lighten(@color-swatch4, 80%);
         color: @color-swatch1;
         text-align: left;
         -webkit-border-radius: 0 0 5px 5px;
@@ -818,8 +830,11 @@ div[role="main"] {
         padding: 2px 5px;
     }
     .menu-subsection-promoted, .menu-items li.menu-item-promoted {
-        background-color: lighten(@color-swatch7, 5%);
-        padding: 3em;
+        background-color: lighten(@color-swatch7, 2%);
+        padding: 2em;
+        @media @mobile {
+            padding: 1em;
+        }
     }
 }
 
@@ -864,6 +879,7 @@ div[role="main"] {
     }
     .widget.companyname a, .widget.companyaddress p, .bk-content-text {
         color: @font-swatch9-color;
+        font-size: bkscale(@font-swatch10-font-size, 0.8);
     }
     .widget.companyname  {
         text-align: left;
@@ -1085,7 +1101,7 @@ div[role="main"] {
     &.signupform fieldset {
         button {
             height: 45px;
-            top: -1px;
+            top: -2px;
             position: relative;
         }
         input {
@@ -1109,6 +1125,8 @@ div[role="main"] {
             margin: 1em 0;
             text-decoration: none;
             height: 45px;
+            position: relative;
+            top: -1px;
         }
     }
 }
@@ -1139,7 +1157,8 @@ select::-ms-expand {
  .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select,
     select {
         -moz-appearance: none;
-        text-indent: 0.01px;
+        text-indent: 0.01px
+        ;
         text-overflow: '';
 }
 

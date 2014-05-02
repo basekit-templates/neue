@@ -821,6 +821,9 @@ div[role="main"] {
             display: none;
         }
     }
+    .menu-subsection {
+        padding: 0;
+    }
     .menu-item-nutritional-title {
         font-size: @font-swatch5-font-size;
     }
@@ -835,6 +838,12 @@ div[role="main"] {
         @media @mobile {
             padding: 1em;
         }
+    }
+    .neby-subsection-name {
+        margin-bottom: 1em;
+    }
+    .menu-subsection-promoted .menu-item-promoted {
+        border: 2px solid lighten(@color-swatch5, 30%);
     }
 }
 
@@ -879,12 +888,12 @@ div[role="main"] {
     }
     .widget.companyname a, .widget.companyaddress p, .bk-content-text {
         color: @font-swatch9-color;
-        font-size: bkscale(@font-swatch10-font-size, 0.8);
     }
     .widget.companyname  {
         text-align: left;
         a {
             border-bottom: 4px solid @color-swatch1;
+            font-size: bkscale(@font-swatch10-font-size, 0.8);
         }
         @media @tablet {
             display: block;

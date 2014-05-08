@@ -318,7 +318,7 @@ body.edit { /* border for logo on editor */
             background-color: transparent;
         }
         p {
-            color: @color-swatch5;
+            color: @font-swatch7-color;
             &:before {
                 display: none;
             }
@@ -967,7 +967,7 @@ div[role="main"] {
         &:before {
             content: "";
             display: block;
-            border: 5px solid transparent;
+            border: 6px solid transparent;
             position: absolute;
             top: 46px;
             left: 11px;
@@ -977,7 +977,7 @@ div[role="main"] {
     }
     .btn-next:before {
         border-left-color: @color-swatch2;
-        left: 13px;
+        left: 12px;
     }
     .btn-prev:before {
         border-right-color: @color-swatch2;
@@ -989,32 +989,36 @@ div[role="main"] {
     .btn-next {
         right: 0;
     }
+    .btn-next, .btn-prev {
+        top: 45%;
+    }
 }
 
 .widget.responsiveslideshow .slideshow-widget .btn-prev,
 .widget.responsiveslideshow .slideshow-widget .btn-next,
 .widget.responsiveslideshow .slideshow-widget .btn-play {
-    background-color: fadeout(@color-swatch1, 30%);
+    background-color: @color-swatch1;
 }
 
 .widget.responsiveslideshow {
     .image-wrapper {
         padding: 0;
+        min-height: 500px;
     }
-    span.inner img {
-
+    span.inner {
+        min-height: 500px;
     }
     .slideshow-widget .btn-play, .btn-prev, .btn-next {
         -webkit-transition: opacity .2s;
         -moz-transition: opacity .2s;
         -ms-transition: opacity .2s;
         transition: opacity .2s;
-        opacity: .75;
+        opacity: .25;
     }
     &:hover {
         .slideshow-widget .btn-play, .btn-prev, .btn-next {
             &:hover {
-                opacity: 1;
+                opacity: .8;
             }
         }
     }

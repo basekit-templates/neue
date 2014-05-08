@@ -101,6 +101,16 @@ body.edit { /* border for logo on editor */
         .grid {
             .col-100 {
                 width: 100%;
+                @media @mobile {
+                    width: 47%;
+                }
+            }
+            .ecombasket-mobile {
+                display: none;
+                @media @mobile {
+                    display: inline-block;
+                    width: 47%;
+                }
             }
             [class*="col-"] {
                 margin: 0;
@@ -127,35 +137,13 @@ body.edit { /* border for logo on editor */
             padding: 5px 0 35px;
         }
     }
-    @media @mobile {
-        .grid {
-            margin-left: -3%;
-            max-width: 105%;
-            [class*="col-"] {
-                display: inline-block;
-                *display: inline;
-                *zoom: 1;
-                vertical-align: top;
-                margin-left: 3%;
-                margin-right: -.25em;
-                overflow: visible;
-                *overflow: visible;
-            }
-            .col-30 {
-                width: 30.36%;
-            }
-            .col-60 {
-                width: 63.666666666%;
-            }
-        }
-    }
     .companyname {
         padding-top: 12px;
         vertical-align: middle;
         a {
             border-bottom: 4px solid @font-swatch10-color;
             @media @tablet {
-                font-size: bkscale(@font-swatch10-font-size, .8);
+                font-size: bkscale(@font-swatch10-font-size, .9);
             }
         }
     }
@@ -163,7 +151,13 @@ body.edit { /* border for logo on editor */
 
 .widget.logo, .widget.companyname {
     display: inline-block;
+    float: left;
     text-align: left;
+    @media @mobile {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
 }
 
 /* Navigation */
@@ -302,15 +296,29 @@ body.edit { /* border for logo on editor */
 
 /* Ecom Basket */
 
+.ecombasket-desktop {
+    @media @mobile {
+        display: none;
+    }
+}
+
 .widget.ecombasket {
     float: right;
+    @media @mobile {
+        background: lighten(@color-swatch4, 85%);
+        display: block;
+        float: left;
+        margin: 40px 0 30px;
+        width: 100%;
+    }
     .ecombasket-pull {
         background-color: transparent;
         float: right;
         padding: 12px 0 20px 10px;
         width: auto;
         @media @mobile {
-            padding-top: 10px;
+            float: none;
+            padding: 5px 0 20px 0;
         }
         &:hover {
             background-color: transparent;
@@ -352,7 +360,7 @@ body.edit { /* border for logo on editor */
         right: 0;
         overflow-y: scroll;
         position: absolute;
-        top: 80px;
+        top: 65px;
         z-index: 99;
         @media @tablet {
             max-height: 385px;

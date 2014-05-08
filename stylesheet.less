@@ -151,6 +151,7 @@ body.edit { /* border for logo on editor */
     }
     .companyname {
         padding-top: 12px;
+        vertical-align: middle;
         a {
             border-bottom: 4px solid @font-swatch10-color;
             @media @tablet {
@@ -163,9 +164,6 @@ body.edit { /* border for logo on editor */
 .widget.logo, .widget.companyname {
     display: inline-block;
     text-align: left;
-    @media @tablet {
-        float: left;
-    }
 }
 
 /* Navigation */
@@ -495,6 +493,16 @@ body.edit { /* border for logo on editor */
                 background: image('/images/arrow-dropdown.png') 95% center no-repeat, linear-gradient(to bottom, white);
                 @media @tablet {
                     width: 100%;
+                }
+            }
+        }
+        .ecom-productlist-products {
+            .btn {
+                display: inline-block;
+                margin-left: 25px;
+                margin-top: 15px;
+                @media @mobile {
+                    margin-left: 0;
                 }
             }
         }
@@ -890,6 +898,7 @@ div[role="main"] {
     }
     .widget.companyname  {
         text-align: left;
+        vertical-align: middle;
         a {
             border-bottom: 4px solid @color-swatch1;
             font-size: bkscale(@font-swatch10-font-size, 0.8);
@@ -916,7 +925,10 @@ div[role="main"] {
                 text-indent: 10px;
                 width: 50%;
                 @media @tablet {
-                    width: 80%;
+                    width: 65%;
+                }
+                @media @mobile {
+                    width: 70%;
                 }
             }
             button {
@@ -1092,10 +1104,12 @@ div[role="main"] {
         top: 31%;
         border-top-width: 15px;
         border-bottom-width: 15px;
+        opacity: 0;
     }
     &:hover {
         &:before, &:after {
             top: 31%;
+            opacity: 0.8;
         }
     }
 }

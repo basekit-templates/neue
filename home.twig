@@ -5,25 +5,22 @@
 {% include 'includes/header.twig' %}
 
 <div class="container feature">
-    <div class="grid">
-        <div class="col-100">
-            {{widget('responsiveslideshow', 'responsiveslideshow',
-            {'duration':'5',
-                'transSpeed': '1500',
-                'transType': 'fade',
-                'showButtons': true,
-                'showBullets': false,
-                'allowPause': false,
-                'allowLoop': true,
-                'showDescription': true,
-                'showTitle': true,
-                'images': [
-                    {'url':asset('/images/feature-bg.jpg')}
-                ]
-                })|raw
-            }}
-        </div><!--end col-100-->
-    </div><!--end grid-->
+    <!--{{widget('responsiveslideshow', 'responsiveslideshow',
+    {'duration':'5',
+        'transSpeed': '1500',
+        'transType': 'fade',
+        'showButtons': true,
+        'showBullets': false,
+        'allowPause': false,
+        'allowLoop': true,
+        'showDescription': true,
+        'showTitle': true,
+        'images': [
+            {'url':asset('/images/feature-bg.jpg')}
+        ]
+        })|raw
+    }}-->
+    {{widget('feature', 'featureimage', {"header": "Lorum ipsum dolor amet", "strapline":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan dolec ipsum dolor.", "buttonText":"Lorum ipsum","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
 </div><!--end container-->
 
 <div role="main">

@@ -316,7 +316,7 @@ body.edit { /* border for logo on editor */
             background-color: transparent;
         }
         p {
-            color: @font-swatch7-color;
+            color: @color-swatch5;
             &:before {
                 display: none;
             }
@@ -378,11 +378,13 @@ body.edit { /* border for logo on editor */
 
 .widget {
     &.feature {
+        margin: 0 auto 15px;
+        max-width: 1400px;
+        padding: 0;
         .feature-bgimg {
             .content {
                 padding: 60px 0;
                 .spare {
-                    padding-left: 65px; 
                     @media @tablet {
                         padding: 0 30px;
                     }
@@ -390,7 +392,7 @@ body.edit { /* border for logo on editor */
             }
             h2, h3 {
                 color: @color-swatch1;
-                max-width: 40%;
+                text-align:center;
                 @media @tablet {
                     max-width: 100%;
                 }
@@ -399,20 +401,28 @@ body.edit { /* border for logo on editor */
                 font-family: @font-swatch1-font-family;
                 font-size: @font-swatch1-font-size;
                 line-height: @font-swatch1-line-height;
+                padding: 0 0 5px 0;
             }
             h3 {
                 font-size: @font-swatch5-font-size;
                 line-height: @font-swatch5-line-height;
             }
             button.btn {
-                background-color: @color-swatch1;
-                color: @color-swatch4;
+                background-color: fade(@color-swatch3, 75%);
+                color: @font-swatch7-color;
+                display: block;
+                padding: 12px 15px;
+                margin: 15px auto 0;
                 &:hover {
-                    background-color: fade(@color-swatch1, 65%);
+                    background-color: @color-swatch3;
                 }
             }
         }
     }
+}
+
+.widget.feature .feature-bgimg .content {
+    background-color: fade(@color-swatch4, 15%);
 }
 
 /* Ecommerce Product List */
@@ -499,6 +509,7 @@ body.edit { /* border for logo on editor */
         .ecom-productlist-products {
             .btn {
                 display: inline-block;
+                color: @font-swatch7-color;
                 margin-left: 25px;
                 margin-top: 15px;
                 @media @mobile {
@@ -654,7 +665,7 @@ body.edit { /* border for logo on editor */
             }
         }
         .btn {
-            color: @color-swatch1;
+            color: @font-swatch7-color;
             height: 50px;
             width: 70%;
             margin: 20px 0;

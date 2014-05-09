@@ -126,7 +126,7 @@ body.edit { /* border for logo on editor */
 
 .bk-header {
     background: white;
-    padding: 40px 0 50px;
+    padding: 40px 0 20px;
     @media @mobile {
         padding-top: 30px;
     }
@@ -466,7 +466,6 @@ body.edit { /* border for logo on editor */
             display: inline-block;
             float: left;
             margin-top: 25px;
-            width: 25%;
             @media @tablet {
                 display: block;
                 margin-bottom: 10px;
@@ -514,17 +513,6 @@ body.edit { /* border for logo on editor */
                 }
             }
         }
-        .ecom-productlist-products {
-            .btn {
-                display: inline-block;
-                color: @font-swatch7-color;
-                margin-left: 25px;
-                margin-top: 15px;
-                @media @mobile {
-                    margin-left: 0;
-                }
-            }
-        }
         .ecom-productslist-product {
             .ecom-productlist-info {
                 text-align: center;
@@ -541,6 +529,18 @@ body.edit { /* border for logo on editor */
                 font-family: @font-swatch3-font-family;
                 font-size: bkscale(@font-swatch3-font-size, 0.9);
             }
+        }
+    }
+}
+
+.ecom-productlist-products {
+    .btn {
+        display: inline-block;
+        color: @font-swatch7-color;
+        margin-left: 25px;
+        margin-top: 15px;
+        @media @mobile {
+            margin-left: 0;
         }
     }
 }
@@ -1139,6 +1139,11 @@ div[role="main"] {
     &.contactform {
         input, textarea {
             border: 1px solid fade(@color-swatch5, 25%);
+            &.email {
+                @media @mobile {
+                    width: 70%;
+                }
+            }
         }
     }
     &.profile {
@@ -1154,12 +1159,22 @@ div[role="main"] {
         }
         input {
             border: 1px solid fade(@color-swatch5, 25%);
+            width: 50%;
+            @media @tablet {
+                width: 65%;
+            }
+            @media @mobile {
+                width: 70%;
+            }
         }
     }
     &.blogsearch {
         input {
             border: 1px solid fade(@color-swatch5, 25%);
             height: 45px;
+            @media @mobile {
+                width: 50%;
+            }
         }
         button {
             background-color: @font-swatch7-background-color;

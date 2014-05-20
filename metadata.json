@@ -2,6 +2,7 @@
     "name":"Neue",
     "thumbnail":"neue.png",
     "screenshot":"neue.png",
+    "templateType":"ecommerce",
     "pageTypes": ["home", "default", "ecomcheckout"],
     "tags": {
     "en": ["clean", "menu", "ecommerce", "shop"],

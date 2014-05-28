@@ -3,7 +3,7 @@
     "thumbnail":"neue.png",
     "screenshot":"neue.png",
     "templateType":"ecommerce",
-    "pageTypes": ["home", "default", "ecomcheckout"],
+    "pageTypes": ["home"],
     "tags": {
     "en": ["clean", "menu", "ecommerce", "shop"],
     "es": ["limpio", "menú", "ecommerce", "tienda"],

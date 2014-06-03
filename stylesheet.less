@@ -306,7 +306,7 @@ body.edit { /* border for logo on editor */
 }
 
 .widget.ecombasket {
-    float: right;
+	text-align: right;
     @media @mobile {
         background: lighten(@color-swatch4, 85%);
         display: block;
@@ -316,9 +316,9 @@ body.edit { /* border for logo on editor */
     }
     .ecombasket-pull {
         background-color: transparent;
-        float: right;
         padding: 12px 0 20px 10px;
         width: auto;
+		display: inline-block;
         @media @mobile {
             float: none;
             padding: 5px 0 20px 0;
@@ -358,7 +358,7 @@ body.edit { /* border for logo on editor */
         -moz-border-radius: 0 0 5px 5px;
         border-radius: 0 0 5px 5px;
         padding: 0 10px 15px;
-        max-height: 350px;
+        max-height: 400px;
         min-width: 250px;
         right: 0;
         overflow-y: scroll;
@@ -443,10 +443,6 @@ body.edit { /* border for logo on editor */
         .productlist-display-form {
             padding: 12px 0 10px;
             margin: 10px 0 15px;
-            display: inline-block;
-            float: right;
-            text-align: right;
-            width: 65%;
             @media @tablet {
                 display: block;
                 margin-left: 0;
@@ -466,8 +462,6 @@ body.edit { /* border for logo on editor */
             }
         }
         .productlist-item-count {
-            display: inline-block;
-            float: left;
             margin-top: 25px;
             @media @tablet {
                 display: block;
@@ -540,8 +534,6 @@ body.edit { /* border for logo on editor */
     .btn {
         display: inline-block;
         color: @font-swatch7-color;
-        margin-left: 25px;
-        margin-top: 15px;
         @media @mobile {
             margin-left: 0;
         }
@@ -1157,7 +1149,6 @@ div[role="main"] {
     &.signupform fieldset {
         button {
             height: 45px;
-            top: -2px;
             position: relative;
         }
         input {
@@ -1192,8 +1183,10 @@ div[role="main"] {
             text-decoration: none;
             height: 45px;
             position: relative;
-            top: -1px;
         }
+    }
+    input, button {
+	    vertical-align: middle;
     }
 }
 

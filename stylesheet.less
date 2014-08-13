@@ -93,12 +93,13 @@ body.edit { /* border for logo on editor */
     padding: 0;
     width: 100%;
     @media @tablet {
-        padding: 15px 0;
         min-height: 65px;
         .container {
-            padding-right: 0;
+            padding: 0;
         }
         .grid {
+            width: auto;
+            margin-left: 0;
             .col-100 {
                 width: 100%;
                 @media @mobile {
@@ -138,8 +139,8 @@ body.edit { /* border for logo on editor */
         }
     }
     .companyname {
-        padding-top: 12px;
         vertical-align: middle;
+        
         a {
             border-bottom: 4px solid @font-swatch10-color;
             @media @tablet {
@@ -151,8 +152,9 @@ body.edit { /* border for logo on editor */
 
 .widget.logo, .widget.companyname {
     display: inline-block;
-    float: left;
+    vertical-align: middle;
     text-align: left;
+    padding-top: 15px;
     @media @mobile {
         display: block;
         text-align: center;
@@ -166,10 +168,15 @@ body.edit { /* border for logo on editor */
 
 /* Navigation */
 
+// Reset aligning
+div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.align-center, div.widget.extendednavigation ul.align-right {
+    float: none !important;
+}
+
 .widget {
     &.extendednavigation {
         display: block;
-        padding: 0;
+        padding: 1px 0 0 0;
         @media @tablet {
             float: none;
             width: 100%;
@@ -178,6 +185,8 @@ body.edit { /* border for logo on editor */
             width: 100%;
         }
         ul {
+            // To remove gap between LI items
+            font-size: 0.1px;
             @media @tablet {
                 /* Hidden until nav icon is clicked */
                 display: none;
@@ -186,15 +195,16 @@ body.edit { /* border for logo on editor */
                 width: 100%;
                 padding-top: 0;
                 position: relative;
-                top: 50px;
                 z-index: 999;
+                margin-top: 65px;
             }
             li {
                 border-left: 1px solid fade(@color-swatch1, 12%);
-                padding: 8px 10px;
+                
                 @media @tablet {
                     border: none;
-                    padding: 12px 25px;
+                    padding: 0;
+                    border-bottom: 1px solid fade(@color-swatch7, 10%);
                 }
                 &:hover {
                     background-color: fade(@color-swatch6, 15%);
@@ -208,29 +218,34 @@ body.edit { /* border for logo on editor */
                 }
                 a {
                     color: darken(@color-swatch1, 20%);
+                    padding: 0;
                 }
                 &:last-child {
                     border-right: 1px solid fade(@color-swatch1, 12%);
                     @media @tablet {
                         border-right: none;
-                        padding-bottom: 20px;
                     }
                 }
-                &:last-child a {
+               
+
+                .text {
+                    padding: 8px 20px;
+                    display: block;
                 }
+
                 a, span.text {
                     @media @tablet {
                         font-size: bkscale(@font-swatch6-font-size, 1.05);
-                        padding-left: 0;
                     }
                 }
                 &.folder {
                     margin-right: 0;
                     padding-right: 20px;
                     &:after {
-                        border-top-color: fade(@color-swatch1, 25%);
+                        border-top-color: fade(@font-swatch6-color, 50%);
                         right: 20px;
                         top: 50%;
+                        margin-top: -0.2em;
                     }
                     span.text {
                         color: darken(@color-swatch1, 20%);
@@ -244,23 +259,19 @@ body.edit { /* border for logo on editor */
                     ul {
                         background-color: @color-swatch2;
                         left: 0;
-                        top: 28px;
+                        top: 100%;
+                        margin: 0;
                         @media @tablet {
                             li {
                                 border-bottom: 1px solid darken(@color-swatch7, 5%);
                             }
                             background-color: lighten(@color-swatch2, 15%);
-                            top: 36px;
                             transition: background-color 0.5s ease;
                         }
                         li {
                             border-bottom: 1px solid fade(@color-swatch1, 12%);
-                            padding: 5px 10px;
                             a {
-                                padding: 6px 20px;
-                                @media @tablet {
-                                    padding: 4px 20px;
-                                }
+                                
                             }
                         }
                     }
@@ -270,12 +281,12 @@ body.edit { /* border for logo on editor */
         a.pull {
             display: none;
             @media @tablet {
-                right: 30px;
-                top: 10px;
+                right: 0;
+                top: 0;
                 position: absolute;
                 display: inline-block;
-                width: 40px;
-                height: 40px;
+                width: 100%;
+                height: 65px;
                 border: none;
                 text-indent: -900em;
                 overflow: hidden;
@@ -288,8 +299,8 @@ body.edit { /* border for logo on editor */
                     width: 26px;
                     height: 3px;
                     background: #c7c7c7;
-                    top: 0;
-                    right: 0;
+                    top: 23px;
+                    right: 30px;
                     box-shadow: 0 6px 0 #c7c7c7, 0 12px 0 #c7c7c7;
                 }
             }
@@ -310,8 +321,7 @@ body.edit { /* border for logo on editor */
     @media @mobile {
         background: lighten(@color-swatch4, 85%);
         display: block;
-        float: left;
-        margin: 40px 0 30px;
+        float: none;
         width: 100%;
         text-align: center;
     }
@@ -322,7 +332,12 @@ body.edit { /* border for logo on editor */
 		display: inline-block;
         @media @mobile {
             float: none;
-            padding: 5px 0 20px 0;
+            padding: 0;
+            display: block;
+            min-height: 65px;
+            position: relative;
+            z-index: 1000;
+            margin-top: 16px;
         }
         &:hover {
             background-color: transparent;
@@ -344,6 +359,10 @@ body.edit { /* border for logo on editor */
                 right: 0;
                 top: 8px;
             }
+            @media @mobile {
+                line-height: 65px;
+                height: 65px;
+            }
         }
         .basket-count {
             color: @color-swatch5;
@@ -364,7 +383,7 @@ body.edit { /* border for logo on editor */
         right: 0;
         overflow-y: scroll;
         position: absolute;
-        top: 65px;
+        top: 63px;
         z-index: 99;
         @media @tablet {
             max-height: 385px;
@@ -376,6 +395,9 @@ body.edit { /* border for logo on editor */
             .ecombasket-item-info {
                 .ecombasket-remove-button {
                     font-size: bkscale(@font-swatch5-font-size, 0.85);
+                    border: none;
+                    padding: 0;
+                    background-color: transparent;
                 }
             }
         }

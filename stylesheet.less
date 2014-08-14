@@ -49,6 +49,7 @@
             *overflow: visible;
         }
         .col-100 { width: 97%; }
+        .col-80 { width: 76.93%; }
         .col-60 { width: 63.666666666%; }
         .col-50 { width: 47%; }
         .col-30 { width: 30.36%; }
@@ -142,7 +143,7 @@ body.edit { /* border for logo on editor */
     }
     .companyname {
         vertical-align: middle;
-        
+        padding-bottom: 15px;
         a {
             border-bottom: 4px solid @font-swatch10-color;
             @media @tablet {
@@ -486,7 +487,29 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
                     margin-right: 0;
                 }
                 &.productlist-search {
-                    display: block;
+                    display: inline-block;
+                    input {
+                        font-size: 14px;
+                        border: 3px solid black;
+                        position: relative;
+                        background: transparent;
+                        padding: 12px;
+                        -webkit-border-radius: 0;
+                        -moz-border-radius: 0;
+                        border-radius: 0; 
+                        height: 52px;
+                        @media @tablet {
+                            margin-left: 0;
+                            width: 100%
+                        }
+                    }
+                    button {
+                        height: 52px;
+                        @media @tablet {
+                            margin-top: 20px;
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
@@ -510,7 +533,9 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
                     display: block;
                 }
                 label {
+                    display: block;
                     margin-right: 6px;
+                    margin-bottom: 6px;
                     @media @mobile {
                         display: block;
                         margin-bottom: 5px;
@@ -518,20 +543,21 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
                 }
             }
             select {
-                font-size: bkscale(@font-swatch7-font-size, 0.96);
+                font-size: 14px;
+                outline: 3px solid black!important;
+                -moz-outline-style: 3px solid black!important;
                 border: 0;
+                position: relative;
+                background: transparent;
+                padding: 12px;
                 -webkit-border-radius: 0;
+                -moz-border-radius: 0;
                 border-radius: 0;
-                height: 32px;
-                -webkit-appearance: none;
-                border: 1px solid lighten(@color-swatch5, 60%);
-                padding: 4px 35px 4px 12px;
-                background: image('/images/arrow-dropdown.png') 95% center no-repeat, -moz-linear-gradient(top, white 0%, #f3f3f3 100%);
-                background: image('/images/arrow-dropdown.png') 95% center no-repeat, -webkit-linear-gradient(top, white 0%, #f3f3f3 100%);
-                background: image('/images/arrow-dropdown.png') 95% center no-repeat, linear-gradient(to bottom, white);
-                margin: 0;
+                margin-right: 5px;
+                outline-offset: 0;
                 @media @tablet {
-                    width: 100%;
+                    width: 99%;
+                    margin-left: 0.5%;
                 }
             }
         }
@@ -545,6 +571,9 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
                 font-size: @font-swatch3-font-size;
                 padding-bottom: 0.2em;
                 padding-top: 25px;
+            }
+            a:hover {
+                text-decoration: none;
             }
             span {
                 color: @color-swatch3;
@@ -639,9 +668,9 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
                 font-family: @font-swatch2-font-family;
             }
             .ecom-product-variation {
-                padding: 1em 0;
+                padding: 0;
                 width: 70%;
-                margin: 1.5em 0;
+                margin: 1.5em 0 0.5em;
                 @media @tablet {
                     padding: 0;
                     width: 100%;
@@ -651,22 +680,18 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
                     width: 100%;
                 }
                 select {
-                    font-size: @font-swatch5-font-size;
-                    -webkit-appearance: none;
-                    -moz-appearance: window;
-                    appearance: none;
-                    outline: none !important;
-                    -moz-outline-style: none;
-                    border: 3px solid fade(@color-swatch5, 90%);
+                    font-size: 14px;
+                    outline: 3px solid black!important;
+                    -moz-outline-style: 3px solid black!important;
+                    border: 0;
                     position: relative;
                     background: transparent;
                     padding: 12px;
-                    -moz-border-radius: 0px;
-                    -webkit-border-radius: 0px;
-                    border-radius: 0px;
-                    background-image: image('/images/arrow.png');
-                    background-position: 96% center;
-                    background-repeat: no-repeat;
+                    -webkit-border-radius: 0;
+                    -moz-border-radius: 0;
+                    border-radius: 0;
+                    margin-right: 5px;
+                    outline-offset: 0;
                 }
                 .ecom-product-vartitle {
                     color: @color-swatch4;
@@ -677,10 +702,6 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
                 span {
                    display: block;
                    a {
-                        &:after {
-                            content: ",";
-                            position: relative;
-                        }
                        &:last-child {
                             &:after {
                                 display: none;
@@ -1009,20 +1030,11 @@ div.widget.extendednavigation ul.align-left, div.widget.extendednavigation ul.al
         }
     }
 
-
-
-
-
-    
-
     // Legal links
     .basket-summary-legal-links {
         margin-top: 2em;
     }
 }
-
-
-
 
 /* Main */
 
@@ -1130,8 +1142,7 @@ div[role="main"] {
     .widget.signupform {
         fieldset {
             label {
-                color: @font-swatch9-color;
-                font-size: @font-swatch5-font-size;
+                display: none;
             }
             input {
                 background-color: lighten(@color-swatch2, 12%);
@@ -1489,7 +1500,9 @@ div[role="main"] {
   }
 }
 
-
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select, .widget.ecomcheckout .delivery select, select {
+    height: 45px;
+}
 
 
 /* Misc */ 
@@ -1512,35 +1525,21 @@ div[role="main"] {
 
 /* Select Fix */
 
-select::-ms-expand {
-    display: none;
-}
- .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select,
+/* .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select,
     select {
-        -moz-appearance: none;
-        text-indent: 0.01px
-        ;
-        text-overflow: '';
-}
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+} */
 
 .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select,
-.widget.ecomcheckout .delivery select,
-select {
+.widget.ecomcheckout .delivery select, select {
     cursor: pointer;
-    -webkit-appearance: none;
     -webkit-border-radius: 0;
     position: relative;
-    background-image: image('/images/arrow.png');
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-position-x: 95%;
-    background-position-y: 53%;
     margin-bottom: 12px;
     padding-right: 33px;
 }
-
-
-
 
 // ---------------------------------------------------------------------
 // Widget: Twitter

@@ -1,7 +1,7 @@
 {
     "name":"Neue",
     "thumbnail":"neue.png",
-    "screenshot":"neue.png",
+    "screenshot":"neue-screenshot.jpg",
     "templateType":"ecommerce",
     "pageTypes": ["home"],
     "tags": {

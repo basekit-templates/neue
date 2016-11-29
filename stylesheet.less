@@ -1352,7 +1352,8 @@ div[role="main"] {
 /* Forms */
 
 .widget {
-    &.contactform {
+    &.contactform,
+    &.advancedcontactform {
         input, textarea {
             border: 1px solid fade(@color-swatch5, 25%);
         }
@@ -1504,6 +1505,39 @@ div[role="main"] {
         align-self: auto;
     }
   }
+}
+
+// Advanced Contact Form
+.advancedcontactform {
+    .label {
+        margin-bottom: 10px;
+    }
+    .input {
+        width: 100%;
+    }
+    .form-group {
+        margin-bottom: 10px;
+    }
+    select {
+        margin-top: 10px;
+        background-position-x: 98%;
+        font-size: 14px;
+        outline: 3px solid black!important;
+        -moz-outline-style: 3px solid black!important;
+        border: 0;
+        position: relative;
+        background: transparent;
+        padding: 12px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        margin-right: 5px;
+        outline-offset: 0;
+        @media @tablet {
+            width: 99%;
+            margin-left: 0.5%;
+        }
+    }
 }
 
 .widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation select, .widget.ecomcheckout .delivery select, select {

@@ -1,5 +1,6 @@
 {
     "name":"Neue",
+    "versionTenCompatible": 1,
     "thumbnail":"neue.png",
     "screenshot":"neue-screenshot.jpg",
     "templateType":"ecommerce",
